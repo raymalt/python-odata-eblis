@@ -17,7 +17,9 @@ except ImportError:
 
 from .entity import declarative_base, EntityBase
 from .exceptions import ODataReflectionError
-from .property import StringProperty, IntegerProperty, DecimalProperty, DatetimeProperty, BooleanProperty, NavigationProperty, UUIDProperty
+from .property import StringProperty, IntegerProperty, DecimalProperty, \
+    DatetimeProperty, BooleanProperty, NavigationProperty, \
+    UUIDProperty, FloatProperty
 from .enumtype import EnumType, EnumTypeProperty
 
 
@@ -39,6 +41,7 @@ class MetaData(object):
         'Edm.DateTimeOffset': DatetimeProperty,
         'Edm.Boolean': BooleanProperty,
         'Edm.Guid': UUIDProperty,
+        'Edm.Double': FloatProperty,
     }
 
     _annotation_term_computed = 'Org.OData.Core.V1.Computed'
